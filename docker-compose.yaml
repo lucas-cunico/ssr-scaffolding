@@ -4,8 +4,10 @@ services:
     build:
       context: .
       target: development
+    restart: always
     ports:
       - 3000:3000
     volumes:
-      - ./frontend/src:/code/src
       - /code/node_modules
+      - ./:/code
+      - /code/.next
